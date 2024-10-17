@@ -1,19 +1,14 @@
 package com.pankaj.spring_sec_demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
 @Table(name = "users")
+@Entity
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String username;
     private String password;
